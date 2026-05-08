@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# ArcPact — Decentralized Freelance Escrow Platform
+
+ArcPact is a Web3 freelance marketplace built on the **Arc Network** (testnet). Clients post jobs, providers apply, and payments are locked in smart contract escrow — no middlemen, no trust issues.
+
+## Features
+
+- Post and manage freelance jobs on-chain
+- Smart contract escrow via ERC-8183
+- USDC / EURC payment support
+- AI-powered dispute resolution (Claude AI)
+- Real-time messaging between client and provider
+- IPFS deliverable uploads via Pinata
+- Wallet connect (MetaMask / Arc Wallet)
+- Supabase-backed job and application storage
+
+## Tech Stack
+
+- **Frontend:** Next.js 16, TypeScript, Tailwind CSS
+- **Blockchain:** Arc Network Testnet, Viem, ERC-8183
+- **Backend:** Supabase (PostgreSQL + Realtime)
+- **Storage:** IPFS via Pinata
+- **AI:** Anthropic Claude API
+- **Deploy:** Netlify
+
+## Smart Contract
+
+- **ERC-8183 Address:** `0x0747EEf0706327138c69792bF28Cd525089e4583`
+- **Network:** Arc Testnet (Chain ID: 5042002)
+- **Explorer:** [testnet.arcscan.app](https://testnet.arcscan.app)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Set up `.env.local` with your Supabase, Pinata, and Anthropic API keys.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
