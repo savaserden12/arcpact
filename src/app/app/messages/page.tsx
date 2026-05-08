@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -11,7 +11,7 @@ import { getJobById, getAllJobs } from '@/lib/store';
 import { Job } from '@/types';
 import { Send, MessageSquare, Clock, Briefcase } from 'lucide-react';
 
-export default function MessagesPage() {
+function MessagesPageInner() {
   const searchParams = useSearchParams();
   const [userAddress, setUserAddress] = useState('');
   const [conversations, setConversations] = useState<ReturnType<typeof getConversations>>([]);
@@ -245,4 +245,9 @@ export default function MessagesPage() {
       </div>
     </div>
   );
+}
+
+import { Suspense } from 'react';
+export default function MessagesPage() {
+  return <Suspense><MessagesPageInner /></Suspense>;
 }

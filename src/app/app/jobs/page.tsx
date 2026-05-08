@@ -1,5 +1,5 @@
-'use client';
-
+﻿'use client';
+import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Job } from '@/types';
@@ -17,7 +17,7 @@ const SORT_OPTIONS = [
   { value: 'budget_low', label: 'Budget: Low to High' },
 ];
 
-export default function JobsPage() {
+function JobsPageInner() {
   const searchParams = useSearchParams();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
@@ -208,3 +208,10 @@ export default function JobsPage() {
     </div>
   );
 }
+
+
+
+export default function JobsPage() {
+  return <Suspense><JobsPageInner /></Suspense>;
+}
+
